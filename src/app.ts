@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 })
 
 app.post(
-  '/api/user',
+  '/user',
   middleware.rateLimiter,
   middleware.validation(newUserSchema),
   async (req, res) => {
