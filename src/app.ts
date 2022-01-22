@@ -21,9 +21,8 @@ app.get('/', (req, res) => {
     message:
       'Hi, my name is HSDio 🤖! I am the API Endpoint for the Notion-HSD-Project.',
     help: {
-      message:
-        'I may need some more features. You can find more information about me at my owners github page.',
-      github: 'https://github.com/KuhlTime'
+      message: 'You want me to learn more skills visit my where I live at:',
+      whereILive: 'https://github.com/KuhlTime/hsd-notion-api'
     }
   })
 })
