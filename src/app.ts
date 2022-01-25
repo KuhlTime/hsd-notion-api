@@ -11,6 +11,8 @@ import cors from 'cors'
 
 // create a simple express server
 
+console.log('Starting in ' + env.nodeEnv + ' mode')
+
 const app = express()
 
 app.use(express.json())
