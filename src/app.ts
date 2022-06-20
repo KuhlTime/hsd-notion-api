@@ -15,6 +15,10 @@ console.log('Starting in ' + env.nodeEnv + ' mode')
 
 const app = express()
 
+// express-rate-limit not working on heroku
+// See: https://stackoverflow.com/a/62494604/4179020
+app.set('trust proxy', 1);
+
 app.use(express.json())
 app.use(cors())
 
