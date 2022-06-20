@@ -35,6 +35,7 @@ app.post(
   middleware.validation(newUserSchema),
   async (req, res) => {
     const email: string = req.body.email
+    const invitedBy: string = req.body.invitedBy
 
     // validate email is from the right domain
     const emailSplit = email.split('@')
@@ -63,7 +64,7 @@ app.post(
     const nameSplit = emailSplit[0].split('.')
     const generatedName =
       capitalize(nameSplit[0]) + ' ' + capitalize(nameSplit[1])
-    createNewUserDatabaseEntry(generatedName, email)
+    createNewUserDatabaseEntry(generatedName, email, invitedBy)
 
     res.send({
       success: true,

@@ -29,7 +29,8 @@ async function checkUserExists(email: string): Promise<boolean> {
 
 async function createNewUserDatabaseEntry(
   name: string,
-  email: string
+  email: string,
+  invitedBy: string
 ): Promise<boolean> {
   const res = await axios({
     method: 'POST',
@@ -81,7 +82,9 @@ async function createNewUserDatabaseEntry(
               {
                 type: 'text',
                 text: {
-                  content: `Online Anfrage: ${new Date().toLocaleString('de')}`
+                  content: `Online Anfrage: ${new Date().toLocaleString(
+                    'de'
+                  )} - Eingeladen von: ${invitedBy}`
                 }
               }
             ]
